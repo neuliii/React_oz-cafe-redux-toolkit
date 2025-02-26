@@ -1,15 +1,16 @@
 import { useState } from "react";
 import Item from "./Item";
 import OrderModal from "./OrderModal";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 
 
 function Menu() {
-  const menu = useSelector(state => state.menuReducer)
+  const menu = useSelector(state => state.menu)
 
   const [modalOn, setModalOn] = useState(false);
   const [modalMenu, setModalMenu] = useState(null);
-  if (!menu)
+  if (!menu) // console.log(menu) => 했을 때 Object 라는 값이 나오므로, false 값이 나오면 !!
+            // **Falsy(거짓 같은 값)**이면 true를 반환하고, **Truthy(참 같은 값)**이면 false를 반환해.
     return (
       <div style={{ textAlign: "center", margin: "80px" }}>
         {" "}

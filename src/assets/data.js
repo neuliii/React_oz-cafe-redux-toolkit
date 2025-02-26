@@ -69,6 +69,8 @@ const options = {
     사이즈: ['Small', 'Medium', 'Large'],
 }
 
+
+
 const data =  { menu, options }
 
 export default data
